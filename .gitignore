@@ -22,3 +22,5 @@ Debug/sfml-tutorials\.exe
 *.jpg
 
 *.a
+
+*.o
