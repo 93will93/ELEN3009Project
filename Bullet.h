@@ -8,6 +8,7 @@
 using namespace sf;
 class Bullet{
 public:
+    Bullet();
     //A bullet must have a  starting point. this can be the (x, y) co-ordinates 
     // of the spaceship that shot it.
     Bullet(int x, int y); 
@@ -18,6 +19,7 @@ public:
     //Getters of the current position of the bullet. This can be useful to identify colisions
     int getXPos();
     int getYPos();
+    void setPosition(int x, int y);
     
     // This function will create the foward movement of the bullet
     void move(RenderWindow& window);

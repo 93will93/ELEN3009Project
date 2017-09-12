@@ -24,12 +24,14 @@ public:
     // Accessors of Position might be useful to know where a bullet is shot from
     int getXPos();
     int getYPos();
+    bool isShotFired();
     
     // Useful to get the graphgical represetnation of the player class.
     Sprite getPlayer();
     
     //This function will draw the player in the window.
     void draw(RenderWindow& window);
+    void shoot(bool shooting);
     
 private: 
     // Current Position of the Player
@@ -53,7 +55,8 @@ private:
     void angleOfRotation();
     
     //When player shoots this function is called
-    void shoot();
+
+    bool _shotFired;
     
     //Tools to perform angle convertions
     float radiansToDegrees(float x);

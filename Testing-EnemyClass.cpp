@@ -10,9 +10,7 @@ int main(){
     Enemy enemy(800, 600);
     
     while(window.isOpen()){
-        window.clear(Color::Black);      //This sets the window black
-        enemy.draw(window);
-        window.display();               //This applies the changes to the window
+        
         
         
         Event event;
@@ -23,9 +21,14 @@ int main(){
                 break;
             }
             
+            
+            
          
         }   
         
+        window.clear(Color::Black);      //This sets the window black
+        enemy.draw(window);
+        window.display();               //This applies the changes to the window
         
      }
     

@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Bullet.h"
 
 
 Player::Player(int xWindow, int yWindow){
@@ -8,6 +9,7 @@ Player::Player(int xWindow, int yWindow){
         _yPos = yWindow - 70 ;    // -70 because of the sizie of sprite
         _theta = (PI)/2;       // 270 degrees.
         _radius = _yPos/2 -20 ;
+        _shotFired = false;
         
         //Setting up the origin
         _xOrigen = _xPos ;
@@ -40,16 +42,21 @@ void Player::draw(RenderWindow& window){
                 Move(event);
                 break;
             case Keyboard::Space:
-                shoot();
+                shoot(true);
                 break;
             default:
                 break;
      }             
  }
  
- void Player::shoot(){
-      std::cout << "Shooting";
+ void Player::shoot(bool shooting){
+    _shotFired = shooting;
  }
+
+bool Player::isShotFired(){
+    return _shotFired;
+}
+
 
 void Player::Move(Event event){ //This function uses angleOfRotation to move clockwise or anticlockwise
  
