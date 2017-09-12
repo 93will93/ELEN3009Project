@@ -2,9 +2,10 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 
+void handlingUserInput(Window window);
 int main(){
     RenderWindow window(VideoMode(800, 600), "My window");
-    
+    window.setMouseCursorVisible(false);
     //This ensures that the window will refresh at the same speed as the monitor to avoid sampling issues
     window.setVerticalSyncEnabled(true);
     Player player(800, 600);
@@ -16,28 +17,22 @@ int main(){
         
         
         Event event;
-        bool keyPressed;
         while(window.pollEvent(event)){
-            // Checks if user attempts at closing the window
-            switch (event.type){
-                case Event::KeyPressed:
-                    keyPressed = true;
-                    break;
-                case Event::KeyReleased:
-                    keyPressed = false;
-                    break;
-                case Event::Closed:
-                    window.close();
-                    break;
-                default:
-                    continue;
+           
+            if(event.type ==  Event::Closed){
+                window.close();
+                break;
             }
             
-            player.move(event);
-        }
+            if(event.type == Event::KeyPressed){    // Need to check this because mouse was been picked up as input
+                player.action(event);  
+                
+            }          
+        }   
         
         
      }
     
     return 0;
 }
+ 
