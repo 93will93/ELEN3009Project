@@ -1,18 +1,17 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include "Player.h"
+#include "Enemy.h"
 
-void handlingUserInput(Window window);
 int main(){
-    RenderWindow window(VideoMode(800, 600), "My window");
+    RenderWindow window(VideoMode(800, 600), "Enemy");
     window.setMouseCursorVisible(false);
     //This ensures that the window will refresh at the same speed as the monitor to avoid sampling issues
     window.setVerticalSyncEnabled(true);
-    Player player(800, 600);
+    Enemy enemy(800, 600);
     
-     while(window.isOpen()){
+    while(window.isOpen()){
         window.clear(Color::Black);      //This sets the window black
-        player.draw(window);
+        enemy.draw(window);
         window.display();               //This applies the changes to the window
         
         
@@ -24,10 +23,7 @@ int main(){
                 break;
             }
             
-            if(event.type == Event::KeyPressed){    // Need to check this because mouse was been picked up as input
-                player.action(event);  
-                
-            }          
+         
         }   
         
         
@@ -35,4 +31,3 @@ int main(){
     
     return 0;
 }
- 

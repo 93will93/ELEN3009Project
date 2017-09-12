@@ -2,6 +2,7 @@
 
 
 Player::Player(int xWindow, int yWindow){
+
     /// This has to be fixed with the size of the sprite
         _xPos = (xWindow/2) - 20; // This is half of the x axis and - 20 because of the size of the sprite
         _yPos = yWindow - 70 ;    // -70 because of the sizie of sprite
@@ -12,7 +13,7 @@ Player::Player(int xWindow, int yWindow){
         _xOrigen = _xPos ;
         _yOrigen = (yWindow/2) - 40;
         
-        if(!_playerSpaceshipTexture.loadFromFile("Untitled-1.png")){
+        if(!_playerSpaceshipTexture.loadFromFile("player.png")){
             std::cerr << "Error Loading Player Texture";
         }
         _playerSpaceshipTexture.setSmooth(true);   
@@ -21,7 +22,9 @@ Player::Player(int xWindow, int yWindow){
         _Player.setPosition(_xPos, _yPos);
 }
 
-
+void Player::draw(RenderWindow& window){
+    window.draw(_Player);
+}
  ///***********************************
  /// Player actions Functions
  ///***********************************

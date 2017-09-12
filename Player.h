@@ -28,6 +28,9 @@ public:
     // Useful to get the graphgical represetnation of the player class.
     Sprite getPlayer();
     
+    //This function will draw the player in the window.
+    void draw(RenderWindow& window);
+    
 private: 
     // Current Position of the Player
     int _xPos;
@@ -53,7 +56,7 @@ private:
     void shoot();
     
     //Tools to perform angle convertions
-    int radiansToDegrees(float x);
+    float radiansToDegrees(float x);
     float degreesToRadians(float x);
 };
 
