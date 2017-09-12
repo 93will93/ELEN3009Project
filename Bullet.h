@@ -8,10 +8,9 @@
 using namespace sf;
 class Bullet{
 public:
-    Bullet();
     //A bullet must have a  starting point. this can be the (x, y) co-ordinates 
     // of the spaceship that shot it.
-    Bullet(int x, int y); 
+    Bullet(int x, int y, int radius); 
     
     //A bullet must be draw in a window
     void draw(RenderWindow& window);
@@ -28,7 +27,7 @@ private:
     int _xPos;
     int _yPos;
     int _radius;
-    int _theta;
+    float _theta;
     
     //The bullets graphical representation
     CircleShape _bullet;

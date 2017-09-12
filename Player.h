@@ -26,6 +26,10 @@ public:
     int getYPos();
     bool isShotFired();
     
+    int getRadius(){
+        return _radius;
+    }
+    
     // Useful to get the graphgical represetnation of the player class.
     Sprite getPlayer();
     

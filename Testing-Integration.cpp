@@ -47,7 +47,7 @@ int main(){
             }
             
             if(player_ptr->isShotFired()){
-                auto newBullet = make_unique<Bullet>(player_ptr->getXPos(), player_ptr->getYPos());
+                auto newBullet = make_unique<Bullet>(player_ptr->getXPos(), player_ptr->getYPos(), player_ptr->getRadius());
                 vectorOfBullets.push_back(*newBullet);
                 player_ptr->shoot(false);
             
