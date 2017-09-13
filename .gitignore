@@ -24,3 +24,5 @@ Debug/sfml-tutorials\.exe
 *.a
 
 *.o
+
+*.ttf

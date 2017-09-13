@@ -1,20 +1,30 @@
 #include "Enemy.h"
 #include "Player.h"
 #include "Bullet.h"
+#include "SplashWindow.h"
+
 #include <vector>
 #include <memory>
-
-using std::unique_ptr;
-using std::make_unique;
-using std::shared_ptr;
-using std::make_shared;
 
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
 
+using std::unique_ptr;
+using std::make_unique;
+using std::shared_ptr;
+using std::make_shared;
+
 int main(){
+    
+    SplashWindow windowIntro;
+    windowIntro.run();
+    
+    if(windowIntro.isQuitingGame()){
+        return 0;
+    }
+    
     RenderWindow window(VideoMode(800, 600), "Integrated Test 1");
     window.setMouseCursorVisible(false);
     
